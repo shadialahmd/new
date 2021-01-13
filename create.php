@@ -2341,6 +2341,9 @@ $valid="";
 
     if(mysqli_query($con,$query)){
         echo "Records added successfully.";
+
+
+        // rediret
     } else{
         echo "ERROR: Could not able to execute $query.- " . mysqli_error($con);
     }
