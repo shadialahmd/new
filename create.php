@@ -2129,8 +2129,6 @@ include("db.php");
         <!-- Header container -->
         <div class="container-fluid d-flex align-items-center">
           <div class="row">
-            <div class="col-lg-7 col-md-10">
-              <h1 class="display-2 text-white">Hello Jesse</h1>
           
           </div>
         </div>
