@@ -1,8 +1,6 @@
 <?php
-
 include("auth_session.php");
 include("db.php");
-echo 'ss';
 ?>
 <html lang="en">
     <head>
@@ -2133,9 +2131,7 @@ echo 'ss';
           <div class="row">
             <div class="col-lg-7 col-md-10">
               <h1 class="display-2 text-white">Hello Jesse</h1>
-              <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
-              <a href="#!" class="btn btn-info">Edit profile</a>
-            </div>
+          
           </div>
         </div>
       </div>
@@ -2158,7 +2154,7 @@ echo 'ss';
               <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
                 <div class="d-flex justify-content-between">
                   <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
-                  <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+                  <a href="logout.php" class="btn btn-sm btn-default float-right">Logout</a>
                 </div>
               </div>
               <div class="card-body pt-0 pt-md-4">
@@ -2218,8 +2214,7 @@ echo 'ss';
 
 
 
-    
-                <form>
+                <form actiom="create.php" method="post"> 
                   <h6 class="heading-small text-muted mb-4">User information</h6>
                   <div class="pl-lg-4">
                     <div class="row">
@@ -2232,7 +2227,7 @@ echo 'ss';
                       <div class="col-lg-6">
                         <div class="form-group">
                           <label class="form-control-label" for="input-email">Email address</label>
-                          <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
+                          <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" name="address">
                         </div>
                       </div>
                     </div>
@@ -2240,13 +2235,13 @@ echo 'ss';
                       <div class="col-lg-6">
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-first-name">First name</label>
-                          <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
+                          <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name"  name ="description" value="Lucky">
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-last-name">Last name</label>
-                          <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
+                          <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" name="area" value="Jesse">
                         </div>
                       </div>
                     </div>
@@ -2259,7 +2254,7 @@ echo 'ss';
                       <div class="col-md-12">
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-address">Address</label>
-                          <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                          <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address"  name ="note1" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
                         </div>
                       </div>
                     </div>
@@ -2267,7 +2262,7 @@ echo 'ss';
                       <div class="col-lg-4">
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-city">City</label>
-                          <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
+                          <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City"  name ="note2" value="New York">
                         </div>
                       </div>
                       <div class="col-lg-4">
@@ -2293,7 +2288,47 @@ echo 'ss';
                       <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
                     </div>
                   </div>
+
+                  <input type="submit" name="submit" class="btn btn-primary" value="submit">
                 </form>
+
+
+                
+    
+<?php
+
+
+$name="";
+$address="";
+$description="";
+$area="";
+$note1="";
+$note2="";
+$id="";
+$err="";
+
+
+
+if( isset($_REQUEST["name"]) && $_REQUEST["name"] !='' && isset($_POST['submit'])){
+    
+    $name=trim($_REQUEST["name"]);
+
+    if($_REQUEST["address"]==''){echo 'Please fill the address'; exit();}else {$address=trim($_REQUEST["address"]);}
+    
+    $description=trim($_REQUEST["description"]);
+    $area=trim($_REQUEST["area"]);
+    $note1=trim($_REQUEST["note1"]);
+    $note2=trim($_REQUEST["note2"]);
+
+    $id=$_SESSION['id'];
+    $query="INSERT INTO products (fname,available,address,description,area,note1,note2,userid) values ('".$name."','y','".$address."','".$description."','".$area."','".$note1."','".$note2."',$id)";
+    $sql=mysqli_query($con,$query);
+    
+}
+
+?>
+
+
               </div>
             </div>
           </div>
