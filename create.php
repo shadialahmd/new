@@ -2273,7 +2273,7 @@ include("db.php");
                       <div class="col-lg-4">
                         <div class="form-group">
                           <label class="form-control-label" for="input-country">الشارع</label>
-                          <input type="number" id="input-postal-code" class="form-control form-control-alternative"  name="street" placeholder="8">
+                          <input type="text" id="input-postal-code" class="form-control form-control-alternative"  name="street" placeholder="8">
                         </div>
                       </div>
                     </div>
@@ -2316,7 +2316,6 @@ $valid="";
 
 
 
-//if( isset($_REQUEST["name"]) && $_REQUEST["name"] !='' && isset($_POST['submit'])){
     if(isset($_POST['submit'])){
     
     $header=trim($_REQUEST["header"]);    
@@ -2332,15 +2331,27 @@ $valid="";
 
 
     $user_id=$_SESSION['id'];
-   echo $query="INSERT INTO land (add_id,header,area,price,land_on,governorate,city,address,about,create_date,update_date,user_id,valid)
-     VALUES (1,'".$header."','".$area."',$price,'".$land_on."','".$governorate."','".$city."','".$address."','".$about."','".$date."','".$date."','".$user_id."',1)";
-     //echo "INSERT INTO `land` ( `add_id`, `header`, `area`, `price`, `land_on`, `governorate`, `city`, `address`, `about`, `create_date`, `update_date`, `user_id`, `valid`) VALUES ('1', 'q', 'q', '12', 'q', 'q', 'q', 'q', 'q', '2021-01-19 00:00:00', '2021-01-13 00:00:00', '12', '12')";
+    $query="INSERT INTO land (add_id,header,area,price,land_on,governorate,city,address,street,about,create_date,update_date,user_id,valid)
+     VALUES (1,'".$header."','".$area."','".$price."','".$land_on."','".$governorate."','".$city."','".$address."','".$street."','".$about."','".$date."','".$date."','".$user_id."',1)";
+     
 
 
 
-    $sql=mysqli_query($con,$query);
+   // $sql=mysqli_query($con,$query);
+
+    if(mysqli_query($con,$query)){
+        echo "Records added successfully.";
+    } else{
+        echo "ERROR: Could not able to execute $query.- " . mysqli_error($con);
+    }
+     
+    // Close connection
+    mysqli_close($con);
     
 }
+
+
+
 
 ?>
 
