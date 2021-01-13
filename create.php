@@ -1668,6 +1668,7 @@ include("db.php");
     font-size: .875rem;
     font-weight: 600;
     color: #525f7f;
+    float: right;
   }
   
   .form-control {
@@ -2073,19 +2074,19 @@ include("db.php");
                   <span class="avatar avatar-sm rounded-circle">
                       <?php
 
-                            $sql4="SELECT * FROM `usersinfo` where usersinfoid=5";
+                            // $sql4="SELECT * FROM `usersinfo` where usersinfoid=5";
 
 
-                            $result4=mysqli_query($con,$sql4);
-                            $row=mysqli_fetch_array($result4);
+                            // $result4=mysqli_query($con,$sql4);
+                            // $row=mysqli_fetch_array($result4);
 
-                            // echo 'shadi'.$row["id"];
+                            // // echo 'shadi'.$row["id"];
 
-                            $imageURL = 'uploads/'.$row["file_name"];
+                            // $imageURL = 'uploads/'.$row["file_name"];
                       ?>
                     <!--<img alt="Image placeholder" src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4.jpg">-->
 
-                    <img alt="Image placeholder" src="<?php echo $imageURL; ?>">
+                    <img alt="Image placeholder" src="<?php //echo $imageURL; ?>">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
                     <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
@@ -2144,7 +2145,7 @@ include("db.php");
                     <a href="#">
                       <!--<img src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4.jpg" class="rounded-circle">-->
 
-                      <img src="<?php echo $imageURL; ?>" class="rounded-circle"> 
+                      <img src="<?php// echo $imageURL; ?>" class="rounded-circle"> 
                     </a>
                   </div>
                 </div>
@@ -2218,28 +2219,28 @@ include("db.php");
                     <div class="row">
                       <div class="col-lg-6">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-username">Username</label>
-                          <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" name="name" value="lucky.jesse">
+                          <label class="form-control-label" for="input-username">العنوان</label>
+                          <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="1" name="header">
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="form-group">
-                          <label class="form-control-label" for="input-email">Email address</label>
-                          <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" name="address">
+                          <label class="form-control-label" for="input-email">المساحة</label>
+                          <input type="text" id="input-email" class="form-control form-control-alternative" placeholder=" 2" name="area">
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-lg-6">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-first-name">First name</label>
-                          <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name"  name ="description" value="Lucky">
+                          <label class="form-control-label" for="input-first-name">السعر</label>
+                          <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="3"  name ="price" >
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-last-name">Last name</label>
-                          <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" name="area" value="Jesse">
+                          <label class="form-control-label" for="input-last-name">تقع على</label>
+                          <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="4" name="land_on" >
                         </div>
                       </div>
                     </div>
@@ -2251,43 +2252,43 @@ include("db.php");
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-address">Address</label>
-                          <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address"  name ="note1" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                          <label class="form-control-label" for="input-address">المحافظة</label>
+                          <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address"  name ="governorate" value="5" type="text">
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-lg-4">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-city">City</label>
-                          <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City"  name ="note2" value="New York">
+                          <label class="form-control-label" for="input-city">المدينة</label>
+                          <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City"  name ="city" value="6">
                         </div>
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-country">Country</label>
-                          <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
+                          <label class="form-control-label" for="input-country">العنوان</label>
+                          <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" name="address" value="7">
                         </div>
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group">
-                          <label class="form-control-label" for="input-country">Postal code</label>
-                          <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
+                          <label class="form-control-label" for="input-country">الشارع</label>
+                          <input type="number" id="input-postal-code" class="form-control form-control-alternative"  name="street" placeholder="8">
                         </div>
                       </div>
                     </div>
                   </div>
                   <hr class="my-4">
                  
-                  <h6 class="heading-small text-muted mb-4">About me</h6>
+                  <h6 class="heading-small text-muted mb-4">الوصف بالكامل</h6>
                   <div class="pl-lg-4">
                     <div class="form-group focused">
-                      <label>About Me</label>
-                      <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                      <label>الوصف بالكامل</label>
+                      <textarea rows="4" name="about" class="form-control form-control-alternative"  placeholder="9">9</textarea>
                     </div>
                   </div>
 
-                  <input type="submit" name="submit" class="btn btn-primary" value="submit">
+                  <input type="submit" name="submit" class="btn btn-primary" value="إضافة">
                 </form>
 
 
@@ -2296,30 +2297,47 @@ include("db.php");
 <?php
 
 
-$name="";
-$address="";
-$description="";
-$area="";
-$note1="";
-$note2="";
 $id="";
-$err="";
+$add_id="";
+$header="";
+$area="";
+$price="";
+$land_on="";
+$governorate="";
+$city="";
+$address="";
+$street="";
+$about="";
+$create_data="";
+$update_date="";
+$user_id="";
+$valid="";
 
 
 
-if( isset($_REQUEST["name"]) && $_REQUEST["name"] !='' && isset($_POST['submit'])){
+
+//if( isset($_REQUEST["name"]) && $_REQUEST["name"] !='' && isset($_POST['submit'])){
+    if(isset($_POST['submit'])){
     
-    $name=trim($_REQUEST["name"]);
-
-    if($_REQUEST["address"]==''){echo 'Please fill the address'; exit();}else {$address=trim($_REQUEST["address"]);}
-    
-    $description=trim($_REQUEST["description"]);
+    $header=trim($_REQUEST["header"]);    
     $area=trim($_REQUEST["area"]);
-    $note1=trim($_REQUEST["note1"]);
-    $note2=trim($_REQUEST["note2"]);
+    $price=trim($_REQUEST["price"]);
+    $land_on=trim($_REQUEST["land_on"]);
+    $governorate=trim($_REQUEST["governorate"]);
+    $city=trim($_REQUEST["city"]);
+    $address=trim($_REQUEST["address"]);
+    $street=trim($_REQUEST["street"]);
+    $about=trim($_REQUEST["about"]);
+    $date=date('Y-m-d H:i:s');
 
-    $id=$_SESSION['id'];
-    $query="INSERT INTO products (fname,available,address,description,area,note1,note2,userid) values ('".$name."','y','".$address."','".$description."','".$area."','".$note1."','".$note2."',$id)";
+
+    $user_id=$_SESSION['id'];
+   echo $query="INSERT INTO land (add_id,header,area,price,land_on,governorate,city,address,about,create_date,update_date,user_id,valid)
+     VALUES (1,'".$header."','".$area."',$price,'".$land_on."','".$governorate."','".$city."','".$address."','".$about."','".$date."','".$date."','".$user_id."',1)";
+     //echo "INSERT INTO `land` ( `add_id`, `header`, `area`, `price`, `land_on`, `governorate`, `city`, `address`, `about`, `create_date`, `update_date`, `user_id`, `valid`) VALUES ('1', 'q', 'q', '12', 'q', 'q', 'q', 'q', 'q', '2021-01-19 00:00:00', '2021-01-13 00:00:00', '12', '12')";
+
+
+
     $sql=mysqli_query($con,$query);
     
 }

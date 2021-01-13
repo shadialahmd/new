@@ -3,7 +3,7 @@
     // If you have not set database password on localhost then set empty.
 $DBhost="localhost";
     $DBuser="root";
-    $DBname="LoginSystem";
+    $DBname="souqps";
     $DBpassword="";
     $con = mysqli_connect($DBhost,$DBuser,$DBpassword,$DBname);
     // Check connection
