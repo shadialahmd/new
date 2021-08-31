@@ -220,7 +220,7 @@ body {
         $password = mysqli_real_escape_string($con, $password);
         // Check user is exist in the database
         $query    = "SELECT * FROM `users` WHERE username='$username' AND password='" . md5($password) . "'";
-        $result   = mysqli_query($con, $query) or die(mysql_error());
+        $result   = mysqli_query($con, $query) or die(mysqli_error($con));
         $rows     = mysqli_num_rows($result);
 
         $row = mysqli_fetch_array($result);
